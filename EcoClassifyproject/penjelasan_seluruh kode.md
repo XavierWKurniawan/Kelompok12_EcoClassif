@@ -25,7 +25,7 @@ EcoClassify/
 │   ├── model.py
 │   ├── utils.py
 │   ├── database.py
-│   ├── evaluate_and_report.py
+│   ├── evaluate_and_report.json
 │   ├── generate_label_map.py
 │   ├── edukasi.json
 │   ├── label_to_jenis.json
@@ -153,7 +153,7 @@ clear_history() → Menghapus semua data riwayat.
 
 Semua data disimpan dalam file history.db.
 
-e. evaluate_and_report.py
+e. evaluate_and_report.json
 
 Skrip untuk evaluasi batch model terhadap dataset.
 

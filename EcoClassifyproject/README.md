@@ -1,4 +1,18 @@
-🧭 RUN_STEPS.md
+Kelompok 12 :
+221110776 - Xavier William Kurniawan
+221112888 - Steven
+221113096 - Lampita E.R. Hutasoit
+Proyek EcoClassify merupakan sistem klasifikasi sampah berbasis machine learning yang dirancang untuk membantu pengenalan jenis sampah organik dan anorganik melalui citra visual. Sistem ini mengintegrasikan model pembelajaran mendalam (deep learning) berbasis EfficientNetB0 dengan antarmuka pengguna berbasis web.
+
+Proyek ini memiliki tiga komponen utama:
+
+Backend (server sisi Flask) — menangani prediksi, penyimpanan data riwayat klasifikasi, dan evaluasi model.
+
+Frontend (aplikasi web) — menyediakan antarmuka bagi pengguna untuk mengunggah gambar dan menampilkan hasil klasifikasi.
+
+Dataset — berisi kumpulan citra sampah yang dikelompokkan per kategori sebagai data latih dan uji.
+
+Secara umum, sistem ini bekerja dengan mengunggah gambar melalui antarmuka web, yang kemudian dikirim ke server Flask untuk diproses menggunakan model klasifikasi. Hasil prediksi berupa kategori, jenis sampah, akurasi, serta saran edukatif dikembalikan ke pengguna dan dapat disimpan dalam riwayat klasifikasi.
 🚀 Langkah Menjalankan Proyek EcoClassify
 
 Dokumen ini menjelaskan cara lengkap menjalankan proyek EcoClassify — dari instalasi, konfigurasi model, hingga menjalankan antarmuka web dan evaluasi batch.
@@ -26,7 +40,7 @@ EcoClassify/
 │   ├── model.py
 │   ├── utils.py
 │   ├── database.py
-│   ├── evaluate_and_report.py
+│   ├── evaluate_and_report.json
 │   ├── generate_label_map.py
 │   ├── label_to_jenis.json
 │   ├── edukasi.json

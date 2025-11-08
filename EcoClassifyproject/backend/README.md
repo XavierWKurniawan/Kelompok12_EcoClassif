@@ -37,7 +37,7 @@ EcoClassify/
 │   ├── model.py
 │   ├── utils.py
 │   ├── database.py
-│   ├── evaluate_and_report.py
+│   ├── evaluate_and_report.json
 │   ├── label_to_jenis.json
 │   ├── edukasi.json
 │   ├── model_waste_classifier.keras
