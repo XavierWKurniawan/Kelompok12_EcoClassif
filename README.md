@@ -1,6 +1,4 @@
-Berikut versi **rapi dan lengkap tanpa ikon** dari dokumen proyek kamu (sudah diformat agar tampak profesional untuk laporan DevOps atau dokumentasi teknis):
 
----
 
 ## **Link Project OneDrive**
 
