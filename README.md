@@ -1,39 +1,65 @@
-link Project OneDrive : https://mikroskilacid-my.sharepoint.com/:f:/g/personal/221110776_students_mikroskil_ac_id/Eiey9HEy7PZAv006Y19rs-8BGM6IoH5dmimGVU-Yi50rHA?e=XetypI
-Kelompok 12 :
-221110776 - Xavier William Kurniawan
-221112888 - Steven
-221113096 - Lampita E.R. Hutasoit
-Proyek EcoClassify merupakan sistem klasifikasi sampah berbasis machine learning yang dirancang untuk membantu pengenalan jenis sampah organik dan anorganik melalui citra visual. Sistem ini mengintegrasikan model pembelajaran mendalam (deep learning) berbasis EfficientNetB0 dengan antarmuka pengguna berbasis web.
+Berikut versi **rapi dan lengkap tanpa ikon** dari dokumen proyek kamu (sudah diformat agar tampak profesional untuk laporan DevOps atau dokumentasi teknis):
 
-Proyek ini memiliki tiga komponen utama:
+---
 
-Backend (server sisi Flask) — menangani prediksi, penyimpanan data riwayat klasifikasi, dan evaluasi model.
+## **Link Project OneDrive**
 
-Frontend (aplikasi web) — menyediakan antarmuka bagi pengguna untuk mengunggah gambar dan menampilkan hasil klasifikasi.
+[https://mikroskilacid-my.sharepoint.com/:f:/g/personal/221110776_students_mikroskil_ac_id/Eiey9HEy7PZAv006Y19rs-8BGM6IoH5dmimGVU-Yi50rHA?e=XetypI](https://mikroskilacid-my.sharepoint.com/:f:/g/personal/221110776_students_mikroskil_ac_id/Eiey9HEy7PZAv006Y19rs-8BGM6IoH5dmimGVU-Yi50rHA?e=XetypI)
 
-Dataset — berisi kumpulan citra sampah yang dikelompokkan per kategori sebagai data latih dan uji.
+## **Kelompok 12**
 
-Secara umum, sistem ini bekerja dengan mengunggah gambar melalui antarmuka web, yang kemudian dikirim ke server Flask untuk diproses menggunakan model klasifikasi. Hasil prediksi berupa kategori, jenis sampah, akurasi, serta saran edukatif dikembalikan ke pengguna dan dapat disimpan dalam riwayat klasifikasi.
-🚀 Langkah Menjalankan Proyek EcoClassify
+* 221110776 – Xavier William Kurniawan
+* 221113096 – Lampita E. R. Hutasoit
+* 221112888 – Steven
 
-Dokumen ini menjelaskan cara lengkap menjalankan proyek EcoClassify — dari instalasi, konfigurasi model, hingga menjalankan antarmuka web dan evaluasi batch.
 
-1️⃣ Persiapan Lingkungan
-a. Buat environment Python (disarankan)
+---
+
+## **Deskripsi Proyek: EcoClassify**
+
+Proyek **EcoClassify** merupakan sistem klasifikasi sampah berbasis *machine learning* yang dirancang untuk membantu pengenalan jenis sampah organik dan anorganik melalui citra visual. Sistem ini mengintegrasikan model pembelajaran mendalam (*deep learning*) berbasis **EfficientNetB0** dengan antarmuka pengguna berbasis web.
+
+Proyek ini terdiri dari tiga komponen utama:
+
+1. **Backend (Flask Server)**
+   Menangani proses prediksi, penyimpanan data riwayat klasifikasi, dan evaluasi model.
+
+2. **Frontend (Aplikasi Web)**
+   Menyediakan antarmuka pengguna untuk mengunggah gambar dan menampilkan hasil klasifikasi.
+
+3. **Dataset**
+   Berisi kumpulan citra sampah yang dikelompokkan per kategori sebagai data latih dan uji.
+
+Secara umum, sistem bekerja dengan cara pengguna mengunggah gambar melalui antarmuka web. Gambar tersebut dikirim ke server Flask untuk diproses menggunakan model klasifikasi. Hasil prediksi berupa kategori, jenis sampah, akurasi, serta saran edukatif dikembalikan ke pengguna dan dapat disimpan dalam riwayat klasifikasi.
+
+---
+
+## **Langkah Menjalankan Proyek EcoClassify**
+
+### 1. Persiapan Lingkungan
+
+a. **Membuat environment Python (disarankan)**
+
+```
 python -m venv venv
-source venv/bin/activate      # (Linux / macOS)
-venv\Scripts\activate         # (Windows)
+source venv/bin/activate      # Linux / macOS
+venv\Scripts\activate         # Windows
+```
 
-b. Install dependensi
+b. **Instalasi dependensi**
+Masuk ke folder backend, lalu jalankan:
 
-Masuk ke folder backend/ lalu jalankan:
-
+```
 pip install -r requirements.txt
+```
 
-2️⃣ Struktur Direktori
+---
 
-Pastikan struktur proyekmu seperti berikut:
+### 2. Struktur Direktori
 
+Pastikan struktur proyek sesuai dengan format berikut:
+
+```
 EcoClassify/
 │
 ├── backend/
@@ -41,7 +67,7 @@ EcoClassify/
 │   ├── model.py
 │   ├── utils.py
 │   ├── database.py
-│   ├── evaluate_and_report.json
+│   ├── eval_summary.json
 │   ├── generate_label_map.py
 │   ├── label_to_jenis.json
 │   ├── edukasi.json
@@ -65,96 +91,111 @@ EcoClassify/
             ├── glass/
             ├── metal/
             └── cardboard/
+```
 
-3️⃣ Menjalankan Server Backend (Flask)
+---
 
-Masuk ke folder backend:
+### 3. Menjalankan Server Backend (Flask)
 
+Masuk ke folder backend dan jalankan:
+
+```
 cd backend
 python app.py
-
+```
 
 Server akan berjalan di:
+**[http://127.0.0.1:5000](http://127.0.0.1:5000)**
 
-http://127.0.0.1:5000
+Pastikan variabel `apiBase` di file **frontend/app.js** menunjuk ke alamat di atas:
 
-
-Jika kamu menggunakan frontend statis (HTML/JS), pastikan apiBase di frontend/app.js menunjuk ke alamat di atas:
-
+```javascript
 const apiBase = 'http://127.0.0.1:5000';
+```
 
-4️⃣ Menjalankan Frontend
-Opsi 1 — Jalankan langsung dari file
+---
 
-Buka frontend/index.html di browser.
-(Gunakan Chrome / Edge untuk dukungan JavaScript penuh.)
+### 4. Menjalankan Frontend
 
-Opsi 2 — Jalankan via server lokal
+**Opsi 1 — Jalankan langsung dari file:**
+Buka `frontend/index.html` di browser (disarankan menggunakan Chrome atau Edge).
+
+**Opsi 2 — Jalankan melalui server lokal:**
+
+```
 cd frontend
 python -m http.server 8000
+```
 
+Kemudian buka di browser:
+**[http://127.0.0.1:8000](http://127.0.0.1:8000)**
 
-Lalu buka di browser:
+---
 
-http://127.0.0.1:8000
+### 5. Melakukan Prediksi
 
-5️⃣ Melakukan Prediksi
+1. Pilih gambar sampah pada halaman utama.
+2. Klik tombol **“Klasifikasikan”**.
+3. Hasil yang ditampilkan mencakup:
 
-Pilih gambar sampah pada halaman utama.
+   * **Kategori**: label prediksi (contoh: Buah, Plastik, dll.)
+   * **Jenis**: organik atau anorganik
+   * **Akurasi**: tingkat keyakinan model
+   * **Edukasi**: saran pengelolaan sampah
+4. Tekan **“Simpan ke Riwayat”** untuk menyimpan hasil ke database.
 
-Klik tombol “Klasifikasikan”.
+---
 
-Hasil ditampilkan dengan informasi:
+### 6. Melihat Riwayat dan Statistik
 
-Kategori: label prediksi (misal: Buah, Plastik, dll.)
+Navigasi ke tab **“Riwayat”** untuk melihat daftar klasifikasi yang telah disimpan.
+Tab **“Statistik”** menampilkan:
 
-Jenis: organik / anorganik
+* Jumlah total klasifikasi
+* Distribusi organik vs anorganik
+* Akurasi rata-rata
 
-Akurasi: tingkat keyakinan model
+Semua data diambil dari **database backend/history.db**.
 
-Edukasi: saran pengelolaan sampah
+---
 
-Tekan “Simpan ke Riwayat” jika ingin menyimpannya ke database.
+### 7. Evaluasi Batch (Opsional)
 
-6️⃣ Melihat Riwayat dan Statistik
+Untuk menilai performa model pada seluruh dataset, jalankan perintah berikut:
 
-Navigasi ke tab “Riwayat” untuk melihat daftar klasifikasi yang disimpan.
-
-Tab “Statistik” menampilkan jumlah total klasifikasi, distribusi organik vs anorganik, dan akurasi rata-rata.
-
-Semua data diambil dari database backend/history.db.
-
-7️⃣ Evaluasi Batch (Opsional)
-
-Untuk menilai performa model pada seluruh dataset:
-
+```
 python backend/evaluate_and_report.py \
   --data-dir "Dataset/Garbage classification" \
   --out backend/reports \
   --threshold 40.0
+```
 
+**Output yang dihasilkan:**
 
-Output:
+* `per_image_predictions.csv` — hasil prediksi per gambar
+* `eval_summary.json` — ringkasan metrik klasifikasi
+* `classification_report.txt` — laporan hasil klasifikasi
+* `confusion_matrix_all.png` — visualisasi matriks kebingungan (jika `matplotlib` tersedia)
 
-📄 per_image_predictions.csv — hasil prediksi setiap gambar
+---
 
-📊 eval_summary.json — ringkasan metrik klasifikasi
+### 8. Regenerasi File Label Mapping (Jika Dataset Diubah)
 
-📈 classification_report.txt — laporan tekstual
+Jika ada kelas baru yang ditambahkan ke dataset, jalankan perintah berikut:
 
-🧩 confusion_matrix_all.png — (jika matplotlib tersedia)
-
-8️⃣ Regenerasi File Label Mapping (Jika Dataset Diubah)
-
-Jika menambah kelas baru dalam dataset, jalankan:
-
+```
 python backend/generate_label_map.py \
-  --data_dir "Dataset/Garbage classification" \
+  --data_dir "Dataset/" \
   --out backend/label_to_jenis.json
+```
 
-9️⃣ Tips & Troubleshooting
-Permasalahan	Penyebab Umum	Solusi
-Model tidak yakin (“tidak_yakin”)	Confidence rendah	Turunkan ECOCONF_THRESHOLD di environment, misal set ECOCONF_THRESHOLD=15.0
-Model tidak ditemukan	File .keras/.h5 hilang	Letakkan file model di folder backend/
-Riwayat tidak tersimpan	Database belum terbentuk	Jalankan ulang app.py agar history.db dibuat otomatis
-Gagal memuat dataset	Struktur folder tidak sesuai	Pastikan subfolder mengikuti pola kelas per kategori
+---
+
+### 9. Tips dan Troubleshooting
+
+| Permasalahan                      | Penyebab Umum                   | Solusi                                                                               |
+| --------------------------------- | ------------------------------- | ------------------------------------------------------------------------------------ |
+| Model tidak yakin (“tidak_yakin”) | Confidence rendah               | Turunkan nilai `ECOCONF_THRESHOLD` di environment, misalnya `ECOCONF_THRESHOLD=15.0` |
+| Model tidak ditemukan             | File `.keras` atau `.h5` hilang | Pastikan file model diletakkan di folder `backend/`                                  |
+| Riwayat tidak tersimpan           | Database belum terbentuk        | Jalankan ulang `app.py` agar `history.db` dibuat otomatis                            |
+| Gagal memuat dataset              | Struktur folder tidak sesuai    | Pastikan subfolder mengikuti pola kelas per kategori                                 |
