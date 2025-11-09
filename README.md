@@ -1,11 +1,13 @@
-link Project OneDrive : https://mikroskilacid-my.sharepoint.com/:f:/g/personal/221110776_students_mikroskil_ac_id/Eiey9HEy7PZAv006Y19rs-8BGM6IoH5dmimGVU-Yi50rHA?e=XetypI
-Kelompok 12 :
-221110776 - Xavier William Kurniawan
-221112888 - Steven
-221113096 - Lampita E.R. Hutasoit
-Proyek EcoClassify merupakan sistem klasifikasi sampah berbasis machine learning yang dirancang untuk membantu pengenalan jenis sampah organik dan anorganik melalui citra visual. Sistem ini mengintegrasikan model pembelajaran mendalam (deep learning) berbasis EfficientNetB0 dengan antarmuka pengguna berbasis web.
+**link Project OneDrive** : https://mikroskilacid-my.sharepoint.com/:f:/g/personal/221110776_students_mikroskil_ac_id/Eiey9HEy7PZAv006Y19rs-8BGM6IoH5dmimGVU-Yi50rHA?e=XetypI
 
-Proyek ini memiliki tiga komponen utama:
+# Kelompok 12 :
+221110776 - Xavier William Kurniawan
+221113096 - Lampita E.R. Hutasoit
+221112888 - Steven
+
+**Proyek EcoClassify** merupakan sistem klasifikasi sampah berbasis machine learning yang dirancang untuk membantu pengenalan jenis sampah organik dan anorganik melalui citra visual. Sistem ini mengintegrasikan model pembelajaran mendalam (deep learning) berbasis EfficientNetB0 dengan antarmuka pengguna berbasis web.
+
+# Proyek ini memiliki tiga komponen utama:
 
 Backend (server sisi Flask) — menangani prediksi, penyimpanan data riwayat klasifikasi, dan evaluasi model.
 
@@ -41,7 +43,7 @@ EcoClassify/
 │   ├── model.py
 │   ├── utils.py
 │   ├── database.py
-│   ├── evaluate_and_report.json
+│   ├── eval_and_summary.json
 │   ├── generate_label_map.py
 │   ├── label_to_jenis.json
 │   ├── edukasi.json
@@ -68,15 +70,13 @@ EcoClassify/
 
 3️⃣ Menjalankan Server Backend (Flask)
 
-Masuk ke folder backend:
+# Masuk ke folder backend:
 
 cd backend
 python app.py
 
-
-Server akan berjalan di:
-
-http://127.0.0.1:5000
+# Server akan berjalan di:
+**http://127.0.0.1:5000**
 
 
 Jika kamu menggunakan frontend statis (HTML/JS), pastikan apiBase di frontend/app.js menunjuk ke alamat di atas:
