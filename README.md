@@ -6,8 +6,8 @@
 
 ## **Kelompok 12**
 
-* 221110776 – Xavier William Kurniawan
 * 221113096 – Lampita E. R. Hutasoit
+* 221110776 – Xavier William Kurniawan
 * 221112888 – Steven
 
 
